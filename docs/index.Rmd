@@ -1,45 +1,61 @@
 ---
-title: "Your A4 Report Title (TODO: Revise title)"
-author: "Your Name"
+title: "Incarceration Over Time"
+author: "Bilal Duale"
 date: '2022-11-01'
 output: html_document
 ---
 
-```{r echo=FALSE, eval=TRUE, message=FALSE}
+```{r echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE}
+chooseCRANmirror(graphics = FALSE, ind = 1)
 source("../source/a4-helpers.R")
 source("../source/analysis.R")
 ```
 
-## Abstract 
-[TODO: Include a short abstract (about 50 words)]
+## Abstract
 
-# Test (TODO: Remove before submission!!)
-```{r echo=FALSE}
-q1_string <- test_query1()
-num <- 5
-```
-As you know, this is a markdown report. The [R Markdown Cheatsheet](https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf) is **useful!**
+One of the biggest problems in America is the high rate of incarceration. The incarceration rate in the United States is a major issue. The vast majority of the millions of prisoners are members of various minorities. Police frequently target Black and Latinx people, which explains why there is so much injustice in the court system. This information demonstrates how inequitable incarceration is in our nation.
 
-* Here's a test of a dynamic variable. Say **"`r q1_string`!!!** 
-* Here's another test. A vector
-of numbers: `r test_query2(num)`.
+## Introduction
 
-Recall that _{r echo=TRUE}_ can be used to display the code, 
-which is very useful when developing and debugging a report. Here's an example: 
+The topic of this project is incarceration in each state of the United States. It includes several elements, such as various racial and gender groups. America has a severe problem with incarceration. Numerous minorities make up a large portion of the millions of inmates. Black and Latinx people are over-policing and being targeted by police, which is why there is so much inequity in the court system. The incarceration trends data set includes data from 1970 to 2018; over that time, there has been a marked increase, and as each year goes by, the problem only worsens in America. People who are incarcerated now or have been in the past are the direct stakeholders who are influenced by this dataset research since they are included in it and are the ones who are. The relatives of those who are or were incarcerated and minorities are indirect stakeholders. I say this because policies frequently target minorities, and the jail system has the potential to have a detrimental impact on minorities at any time.
 
-```{r echo=TRUE}
-num <- 5
-sum <- sum(test_query2(num))
-print(sum)
+## Data Summary
+
+In the most recent year, there has been `r max_black_pop` newly incarcerated black people. There has also been `r max_latinx_pop` latinx people in the most recent year. In comparison to the number of white people that have been incarcerated in the most recent year, which is `r max_white_pop`. To add on, out of all the years that range from 1970 to 2018 to the year with the highest number of black people in jail is `r year_highest_black_jail`.
+
+```{r echo = FALSE}
+plot_jail_pop_for_us()
 ```
 
-## Introduction 
-[TODO]
 
-## Data Summary 
-[TODO]
+*Caption*: Distribution of the Jail Population from 1970 to 2018 by year.
 
-[TODO ... other sections ... See Canvas for details]
+*Summary*: This bar graph compares the overall inmate population for each year. The earliest years have a smaller population than the later years, as shown in this graph. The population began growing gradually in 1980, and by 1990, it had significantly increased. Additionally, the population peaked between 2006 and 2009. Why did the population grow so much after 1990 is a question I have.
 
-_All the very best with your work!_
+```{r echo = FALSE}
+results_line_plot
+```
 
+
+*Caption*: Comparing California, Oregon, Minnesota, and Washington’s jail population.
+
+*Summary*: California, Oregon, Minnesota, and Washington are the four states represented in this line graph that compares jail populations. This line chart shows that California has the highest prison population, with a rather high beginning point. Compared to Washington, Oregon, Minnesota which never surpasses 20,000 people. A question I have is why is California's prison population so high compared to others?
+
+
+```{r echo = FALSE}
+comparison
+```
+
+
+*Caption*: Comparing White and Latinx Jail Populations from 2009 to 2012.
+
+*Summary*: I looked at the years 2009 to 2012 to compare the jail populations for these two ethnic groups. This bar graph demonstrates that, over the course of the four years, the white population has increased, especially in 2009. They have quite different populations, which surprised me because I didn't anticipate the number of white inmates to be higher. 
+
+```{r echo = FALSE}
+black_jail
+```
+
+
+*Caption*: Black jail population in different areas of Oregon.
+
+*Summary*:  Each county in Oregon's jail population is displayed on this map. The majority of the counties have a lighter color, indicating that the population density there is low. A county at the bottom of the chart does, however, have a heavy shade of red, indicating a particularly high jail population there. Question: Why is that one county way darker than the others?
